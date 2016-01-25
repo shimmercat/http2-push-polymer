@@ -1,0 +1,31 @@
+<dom-module id="http2-push">
+
+    <template>
+      <h1>Http2 Push header</h1>
+        <div class="horizontal-section-container">
+          <iron-ajax
+          auto
+          url="https://www.googleapis.com/youtube/v3/search"
+          params='{"part":"snippet", "q":"polymer", "key": "AIzaSyAuecFZ9xJXbGDkQYWBmYrtzOGJD-iDIgI", "type": "video"}'
+          handle-as="json"
+          on-response="ajaxResponse"></iron-ajax>
+        </div>
+    </template>
+
+  <script>
+    Polymer({
+      is: "http2-push",
+      ready: function() {
+        console.log("hola hola");
+      },
+      ajaxResponse: function(e, request) {
+          var headers = request.xhr.getAllResponseHeaders();
+          var reponse_obj = request.response;
+          //alert(headers[Servers])
+          console.log(reponse_obj);
+          console.log(headers);
+      },
+    });
+  </script>
+
+</dom-module>
