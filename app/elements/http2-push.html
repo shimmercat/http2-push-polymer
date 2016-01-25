@@ -15,9 +15,6 @@
   <script>
     Polymer({
       is: "http2-push",
-      ready: function() {
-        console.log("hola hola");
-      },
       ajaxResponse: function(e, request) {
           var headers = request.xhr.getAllResponseHeaders();
           var reponse_obj = request.response;
