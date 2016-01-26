@@ -18,7 +18,13 @@
       ajaxResponse: function(e, request) {
           var headers = request.xhr.getAllResponseHeaders();
           var reponse_obj = request.response;
-          //alert(headers[Servers])
+          var temp = request.xhr.getResponseHeader("x-shimmmercat-note");
+          if (temp=="pushed-stream")
+          {
+              alert("tiene push activado")
+          };
+
+          alert(temp);
           console.log(reponse_obj);
           console.log(headers);
       },
